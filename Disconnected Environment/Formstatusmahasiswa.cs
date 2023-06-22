@@ -14,7 +14,7 @@ namespace Disconnected_Environment
     public partial class Formstatusmahasiswa : Form
     {
         private string stringConnection = "data source=DESKTOP-7OIABQI\\EVARE;" +
-        "database=act6;User ID=saPassword=123";
+        "database=act6;User ID=sa;Password=123";
         private SqlConnection koneksi;
 
         private void refreshform()
@@ -72,7 +72,7 @@ namespace Disconnected_Environment
             int y = DateTime.Now.Year - 2010;
             string[] type = new string[y];
             int i = 0;
-            for (i = 0; i < type.Leght; i++)
+            for (i = 0; i < type.Length; i++)
             {
                 if (i == 0)
                 {
@@ -80,8 +80,8 @@ namespace Disconnected_Environment
                 }
                 else
                 {
-                    int l = 2010 + i;
-                    cbxTahunMAsuk.Items.Add(l, ToString());
+                    int 1 = 2010 + i;
+                    cbxTahunMasuk.Items.Add(1.ToString());
                 }
             }
         }
@@ -95,5 +95,79 @@ namespace Disconnected_Environment
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dataGridView();
+            btnOpen.Enabled = false;
+        }
+
+        private void btnOpen_Click()
+        {
+            dataGridView();
+            btnOpen.Enabled = false;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            cbxNama.Enabled = true;
+            cbxStatusMahasiswa.Enabled = true;
+            cbxTahunMasuk.Enabled = true;
+            cbTahunMasuk();
+            cbNama();
+            txtNIM.Visible = true;
+            btnSave.Enabled = true;
+            btnClear.Enabled = true;
+            btnAdd.Enabled = false;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            string nim = txtNIM.Text;
+            string statusMahasiswa = cbxStatusMahasiswa.Text;
+            string tahunMasuk = cbxTahunMasuk.Text;
+            int count = 0;
+            string tempKodeStatus = "";
+            string kodeStatus = "";
+            koneksi.Open();
+
+            string str = "select count (*) from dbo.status_mahasiswa";
+            SqlCommand cm = new SqlCommand(str, koneksi);
+            count = (int)cm.ExecuteScalar();
+
+            if(count == 0)
+            {
+                kodeStatus = "1";
+            }
+            else
+            {
+                string queryStrings = "select max(id_status) from dbo.status_mahasiswa";
+                SqlCommand cmStatusMahasiswaSum = new SqlCommand(str, koneksi);
+                int totalStatusMahasiswa = (int)cmStatusMahasiswaSum.ExecuteScalar();
+                int finalKodeStatusInt = totalStatusMahasiswa + 1;
+                kodeStatus = Convert.ToString(finalKodeStatusInt);
+            }
+            string queryString = "insert into dbo.status_mahasiswa (id_status, nim, " +
+                "status_mahasiswa, tahun_masuk)" + "values(@ids, @NIM, @sm, @tm)";
+            SqlCommand cmd = new SqlCommand(queryString, koneksi);
+            cmd.CommandType = CommandType.Text;
+
+            cmd.Parameters.Add(new SqlParameter("ids", kodeStatus));
+            cmd.Parameters.Add(new SqlParameter("NIM", nim));
+            cmd.Parameters.Add(new SqlParameter("sm", statusMahasiswa));
+            cmd.Parameters.Add(new SqlParameter("tm", tahunMasuk));
+            cmd.ExecuteNonQuery();
+            koneksi.Close();
+
+            MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            refreshform();
+            dataGridView();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            refreshform();
+        }
+
     }
 }

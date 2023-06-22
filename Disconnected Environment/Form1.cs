@@ -28,5 +28,14 @@ namespace Disconnected_Environment
             hu.Show();
             this.Hide();
         }
+
+        private void dataStatusMahasiswaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formstatusmahasiswa fs = new Formstatusmahasiswa();
+            fs.Show();
+            this.Hide();
+
+        }
+
     }
 }

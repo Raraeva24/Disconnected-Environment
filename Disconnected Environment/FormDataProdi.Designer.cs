@@ -37,7 +37,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnOpen = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.act6DataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.act6DataSet)).BeginInit();
@@ -50,6 +50,7 @@
             this.nmp.Size = new System.Drawing.Size(231, 20);
             this.nmp.TabIndex = 1;
             this.nmp.Text = "nmp";
+            this.nmp.TextChanged += new System.EventHandler(this.nmp_TextChanged);
             // 
             // label1
             // 
@@ -111,22 +112,22 @@
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnAdd
             // 
-            this.button2.Location = new System.Drawing.Point(479, 314);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 33);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Add";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnAdd.Location = new System.Drawing.Point(479, 314);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(90, 33);
+            this.btnAdd.TabIndex = 8;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.button2_Click);
             // 
             // FormDataProdi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnClear);
@@ -153,6 +154,6 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnOpen;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

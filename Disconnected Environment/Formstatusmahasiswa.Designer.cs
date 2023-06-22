@@ -32,14 +32,14 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.act6DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.act6DataSet = new Disconnected_Environment.act6DataSet();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.cbxNama = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnOpen = new System.Windows.Forms.Button();
+            this.txtNIM = new System.Windows.Forms.Label();
+            this.cbxStatusMahasiswa = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.cbxTahunMasuk = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -69,78 +69,82 @@
             this.act6DataSet.DataSetName = "act6DataSet";
             this.act6DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label1
+            // cbxNama
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(141, 231);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Nama Prodi";
+            this.cbxNama.AutoSize = true;
+            this.cbxNama.Location = new System.Drawing.Point(141, 231);
+            this.cbxNama.Name = "cbxNama";
+            this.cbxNama.Size = new System.Drawing.Size(62, 13);
+            this.cbxNama.TabIndex = 10;
+            this.cbxNama.Text = "Nama Prodi";
             // 
-            // button2
+            // btnAdd
             // 
-            this.button2.Location = new System.Drawing.Point(480, 221);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 33);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Add";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(480, 221);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(90, 33);
+            this.btnAdd.TabIndex = 15;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // button1
+            // btnOpen
             // 
-            this.button1.Location = new System.Drawing.Point(626, 40);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 33);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Open";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnOpen.Location = new System.Drawing.Point(626, 40);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(90, 33);
+            this.btnOpen.TabIndex = 14;
+            this.btnOpen.Text = "Open";
+            this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label4
+            // txtNIM
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(141, 271);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 13);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Nomor Induk Mahasiswa";
+            this.txtNIM.AutoSize = true;
+            this.txtNIM.Location = new System.Drawing.Point(141, 271);
+            this.txtNIM.Name = "txtNIM";
+            this.txtNIM.Size = new System.Drawing.Size(124, 13);
+            this.txtNIM.TabIndex = 18;
+            this.txtNIM.Text = "Nomor Induk Mahasiswa";
             // 
-            // label2
+            // cbxStatusMahasiswa
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(141, 314);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 13);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Status Mahasiswa";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.cbxStatusMahasiswa.AutoSize = true;
+            this.cbxStatusMahasiswa.Location = new System.Drawing.Point(141, 314);
+            this.cbxStatusMahasiswa.Name = "cbxStatusMahasiswa";
+            this.cbxStatusMahasiswa.Size = new System.Drawing.Size(93, 13);
+            this.cbxStatusMahasiswa.TabIndex = 19;
+            this.cbxStatusMahasiswa.Text = "Status Mahasiswa";
+            this.cbxStatusMahasiswa.Click += new System.EventHandler(this.label2_Click);
             // 
-            // button3
+            // btnClear
             // 
-            this.button3.Location = new System.Drawing.Point(480, 304);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(90, 33);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Clear";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnClear.Location = new System.Drawing.Point(480, 304);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(90, 33);
+            this.btnClear.TabIndex = 20;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // label3
+            // cbxTahunMasuk
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(141, 370);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 13);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "Tahun Masuk";
+            this.cbxTahunMasuk.AutoSize = true;
+            this.cbxTahunMasuk.Location = new System.Drawing.Point(141, 370);
+            this.cbxTahunMasuk.Name = "cbxTahunMasuk";
+            this.cbxTahunMasuk.Size = new System.Drawing.Size(73, 13);
+            this.cbxTahunMasuk.TabIndex = 21;
+            this.cbxTahunMasuk.Text = "Tahun Masuk";
             // 
-            // button4
+            // btnSave
             // 
-            this.button4.Location = new System.Drawing.Point(480, 360);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(90, 33);
-            this.button4.TabIndex = 22;
-            this.button4.Text = "Save";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(480, 360);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(90, 33);
+            this.btnSave.TabIndex = 22;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // comboBox1
             // 
@@ -182,15 +186,15 @@
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cbxTahunMasuk);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.cbxStatusMahasiswa);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.txtNIM);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cbxNama);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnOpen);
             this.Name = "Formstatusmahasiswa";
             this.Text = "Formstatusmahasiswa";
             this.Load += new System.EventHandler(this.Formstatusmahasiswa_Load);
@@ -207,14 +211,14 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource act6DataSetBindingSource;
         private act6DataSet act6DataSet;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label cbxNama;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnOpen;
+        private System.Windows.Forms.Label txtNIM;
+        private System.Windows.Forms.Label cbxStatusMahasiswa;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Label cbxTahunMasuk;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;

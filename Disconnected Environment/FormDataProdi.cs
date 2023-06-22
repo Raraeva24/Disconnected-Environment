@@ -42,7 +42,7 @@ namespace Disconnected_Environment
         private void button2_Click(object sender, EventArgs e)
         {
             nmp.Enabled = true;
-            textBox1.Enabled = true;
+            TextBox.Enabled = true;
             btnSave.Enabled = true;
             btnClear.Enabled = true;
         }
@@ -102,6 +102,11 @@ namespace Disconnected_Environment
                 dataGridView();
                 refreshform();
             }
+        }
+
+        private void nmp_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
