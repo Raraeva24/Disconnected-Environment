@@ -14,7 +14,7 @@ namespace Disconnected_Environment
     public partial class FormDataProdi : Form
     {
         private string stringConnection = "data source=DESKTOP-7OIABQI\\EVARE;" +
-        "database=act6;User ID=saPassword=123";
+        "database=act6;User ID=sa;Password=123";
         private SqlConnection koneksi;
 
         private void refreshform()
@@ -23,6 +23,7 @@ namespace Disconnected_Environment
             nmp.Enabled = false;
             btnSave.Enabled = false;
             btnClear.Enabled = false;
+            btnOpen.Enabled = false;
         }
         
         public FormDataProdi()
@@ -42,7 +43,7 @@ namespace Disconnected_Environment
         private void button2_Click(object sender, EventArgs e)
         {
             nmp.Enabled = true;
-            TextBox.Enabled = true;
+            textBox1.Enabled = true;
             btnSave.Enabled = true;
             btnClear.Enabled = true;
         }
@@ -77,7 +78,7 @@ namespace Disconnected_Environment
         {
 
             string nmProdi = nmp.Text;
-            string idProdi = nmp.Text;
+            string idProdi = textBox1.Text;
 
             if (nmProdi == "")
             {
@@ -90,7 +91,7 @@ namespace Disconnected_Environment
             else
             {
                 koneksi.Open();
-                string str = "insert into dbo.Prodi (nama_prodi, id_prodi" + "values (@nama_prodi, @id_prodi)";
+                string str = "insert into dbo.Prodi (nama_prodi, id_prodi)" + "values (@nama_prodi, @id_prodi)";
                 SqlCommand cmd = new SqlCommand(str, koneksi);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.Add(new SqlParameter("@id_prodi", idProdi));

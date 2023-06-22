@@ -28,7 +28,8 @@ namespace Disconnected_Environment
             txtNIM.Visible = false;
             btnSave.Enabled = false;
             btnClear.Enabled = false;
-            btnAdd.Enabled = true;
+            btnAdd.Enabled = false;
+
         }
 
         public Formstatusmahasiswa()
@@ -41,7 +42,7 @@ namespace Disconnected_Environment
         private void dataGridView()
         {
             koneksi.Open();
-            string str = "select * from dbo.status_mahasiswa";
+            string str = "select * from dbo.statusMahasiswa";
             SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -62,7 +63,7 @@ namespace Disconnected_Environment
             cmd.ExecuteReader();
             koneksi.Close();
 
-            cbxNama.DisplayMember = "Nama_mahasiswa";
+            cbxNama.DisplayMember = "nama_mahasiswa";
             cbxNama.ValueMember = "NIM";
             cbxNama.DataSource = ds.Tables[0];
         }
@@ -80,8 +81,8 @@ namespace Disconnected_Environment
                 }
                 else
                 {
-                    int 1 = 2010 + i;
-                    cbxTahunMasuk.Items.Add(1.ToString());
+                    int l = 2010 + i;
+                    cbxTahunMasuk.Items.Add(l.ToString());
                 }
             }
         }
@@ -93,13 +94,11 @@ namespace Disconnected_Environment
 
         private void Formstatusmahasiswa_Load(object sender, EventArgs e)
         {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataGridView();
-            btnOpen.Enabled = false;
+            
         }
 
         private void btnOpen_Click()
@@ -110,14 +109,14 @@ namespace Disconnected_Environment
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            cbxTahunMasuk.Enabled = true;
             cbxNama.Enabled = true;
             cbxStatusMahasiswa.Enabled = true;
-            cbxTahunMasuk.Enabled = true;
+            txtNIM.Visible = true;
             cbTahunMasuk();
             cbNama();
-            txtNIM.Visible = true;
-            btnSave.Enabled = true;
             btnClear.Enabled = true;
+            btnSave.Enabled = true;
             btnAdd.Enabled = false;
         }
 
@@ -169,5 +168,23 @@ namespace Disconnected_Environment
             refreshform();
         }
 
+        private void cbxNama_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            koneksi.Open();
+            string nim = "";
+            string strs = "select NIM from dbo.mahasiswa where nama_mahasiswa = @nm";
+            SqlCommand cm = new SqlCommand(strs, koneksi);
+            cm.CommandType = CommandType.Text;
+            cm.Parameters.Add(new SqlParameter("@nm", cbxNama.Text));
+            SqlDataReader dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                nim = dr["NIM"].ToString();
+            }
+            dr.Close();
+            koneksi.Close();
+
+            this.txtNIM.Text = nim;
+        }
     }
 }

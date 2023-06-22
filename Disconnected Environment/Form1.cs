@@ -24,8 +24,8 @@ namespace Disconnected_Environment
 
         private void dataProdiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormDataProdi hu = new FormDataProdi();
-            hu.Show();
+            FormDataProdi fp = new FormDataProdi();
+            fp.Show();
             this.Hide();
         }
 
@@ -37,5 +37,11 @@ namespace Disconnected_Environment
 
         }
 
+        private void dataMahasiswaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDataMahasiswa ds = new FormDataMahasiswa();
+            ds.Show();
+            this.Hide();
+        }
     }
 }

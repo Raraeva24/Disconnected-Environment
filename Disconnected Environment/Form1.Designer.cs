@@ -72,6 +72,7 @@
             this.dataMahasiswaToolStripMenuItem.Name = "dataMahasiswaToolStripMenuItem";
             this.dataMahasiswaToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.dataMahasiswaToolStripMenuItem.Text = "Data Mahasiswa";
+            this.dataMahasiswaToolStripMenuItem.Click += new System.EventHandler(this.dataMahasiswaToolStripMenuItem_Click);
             // 
             // dataStatusMahasiswaToolStripMenuItem
             // 

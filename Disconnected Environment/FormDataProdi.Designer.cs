@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.nmp = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.texbox = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.act6DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.act6DataSet = new Disconnected_Environment.act6DataSet();
@@ -38,28 +37,21 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnOpen = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.nmp = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.act6DataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.act6DataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // nmp
+            // texbox
             // 
-            this.nmp.Location = new System.Drawing.Point(225, 321);
-            this.nmp.Name = "nmp";
-            this.nmp.Size = new System.Drawing.Size(231, 20);
-            this.nmp.TabIndex = 1;
-            this.nmp.Text = "nmp";
-            this.nmp.TextChanged += new System.EventHandler(this.nmp_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(157, 324);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Nama Prodi";
+            this.texbox.AutoSize = true;
+            this.texbox.Location = new System.Drawing.Point(157, 324);
+            this.texbox.Name = "texbox";
+            this.texbox.Size = new System.Drawing.Size(62, 13);
+            this.texbox.TabIndex = 2;
+            this.texbox.Text = "Nama Prodi";
             // 
             // dataGridView1
             // 
@@ -84,7 +76,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(366, 363);
+            this.btnClear.Location = new System.Drawing.Point(366, 373);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(90, 33);
             this.btnClear.TabIndex = 5;
@@ -94,7 +86,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(242, 363);
+            this.btnSave.Location = new System.Drawing.Point(242, 373);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 33);
             this.btnSave.TabIndex = 6;
@@ -122,18 +114,33 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.button2_Click);
             // 
+            // nmp
+            // 
+            this.nmp.Location = new System.Drawing.Point(225, 321);
+            this.nmp.Name = "nmp";
+            this.nmp.Size = new System.Drawing.Size(248, 20);
+            this.nmp.TabIndex = 9;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(225, 347);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(248, 20);
+            this.textBox1.TabIndex = 10;
+            // 
             // FormDataProdi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.nmp);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.nmp);
+            this.Controls.Add(this.texbox);
             this.Name = "FormDataProdi";
             this.Text = "FormDataProdi";
             this.Load += new System.EventHandler(this.FormDataProdi_Load);
@@ -146,8 +153,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox nmp;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label texbox;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource act6DataSetBindingSource;
         private act6DataSet act6DataSet;
@@ -155,5 +161,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.TextBox nmp;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

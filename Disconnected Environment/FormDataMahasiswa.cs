@@ -30,12 +30,12 @@ namespace Disconnected_Environment
 
         private void clearBinding()
         {
-            this.LAbel.DataBindings.Clear();
-            this.labell.DataBindings.Clear();
-            this.alm.DataBindings.Clear();
-            this.jj.DataBindings.Clear();
-            this.tl.DataBindings.Clear();
-            this.pr.DataBindings.Clear();
+            this.txtNIM.DataBindings.Clear();
+            this.txtNama.DataBindings.Clear();
+            this.txtAlamat.DataBindings.Clear();
+            this.cbxJenisKelamin.DataBindings.Clear();
+            this.dtTanggalLahir.DataBindings.Clear();
+            this.cbxProdi.DataBindings.Clear();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -78,28 +78,33 @@ namespace Disconnected_Environment
 
         private void FormDataMahasiswa_Load(object sender, EventArgs e)
         {
-            koneksi.Open();
-            SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("Select m.nim, m.nama_mahasiswa, " +
-                "m.alamat, m.jenis_kelamin, m.tgl_lahir, p.nama_prodi From dbo.Mahasiswa m " +
-                "join dbo.Prodi p on m.id_prodi = p.id_prodi", koneksi));
-            DataSet ds = new DataSet();
-            dataAdapter1.Fill(ds);
 
-            this.customersBindingSource.DataSource = ds.Tables[0];
-            this.txtNIM.DataBindings.Add(
-                new Binding("Text", this.customersBindingSource, "nim", true));
-            this.txtNama.DataBindings.Add(
-                new Binding("Text", this.customersBindingSource, "nama_mahasiswa", true));
-            this.txtAlamat.DataBindings.Add(
-                new Binding("Text", this.customersBindingSource, "alamat", true));
-            this.cbxJenisKelamin.DataBindings.Add(
-                new Binding("Text", this.customersBindingSource, "jenis_kelamin", true));
-            this.dtTanggalLahir.DataBindings.Add(
-                new Binding("Text", this.customersBindingSource, "tgl_lahir", true));
-            this.cbxProdi.DataBindings.Add(
-                new Binding("Text", this.customersBindingSource, "nama_prodi", true));
-            koneksi.Close();
         }
+        private void FormDataMahasiswa_Load()
+            {
+                koneksi.Open();
+                SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("Select m.nim, m.nama_mahasiswa, " +
+                    "m.alamat, m.jenis_kelamin, m.tgl_lahir, p.nama_prodi From dbo.Mahasiswa m " +
+                    "join dbo.Prodi p on m.id_prodi = p.id_prodi", koneksi));
+                DataSet ds = new DataSet();
+                dataAdapter1.Fill(ds);
+
+                this.customersBindingSource.DataSource = ds.Tables[0];
+                this.txtNIM.DataBindings.Add(
+                    new Binding("Text", this.customersBindingSource, "nim", true));
+                this.txtNama.DataBindings.Add(
+                    new Binding("Text", this.customersBindingSource, "nama_mahasiswa", true));
+                this.txtAlamat.DataBindings.Add(
+                    new Binding("Text", this.customersBindingSource, "alamat", true));
+                this.cbxJenisKelamin.DataBindings.Add(
+                    new Binding("Text", this.customersBindingSource, "jenis_kelamin", true));
+                this.dtTanggalLahir.DataBindings.Add(
+                    new Binding("Text", this.customersBindingSource, "tgl_lahir", true));
+                this.cbxProdi.DataBindings.Add(
+                    new Binding("Text", this.customersBindingSource, "nama_prodi", true));
+                koneksi.Close();
+            }
+       
 
         private void refreshform()
         {
